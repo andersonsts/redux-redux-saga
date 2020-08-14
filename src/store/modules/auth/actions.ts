@@ -12,4 +12,4 @@ function signInRequest({ email, password }: SignInData) {
   })
 }
 
-export default signInRequest;
+export { signInRequest };

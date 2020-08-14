@@ -5,6 +5,8 @@ import SignIn from './pages/SignIn';
 
 import { store } from './store';
 
+import './index.css';
+
 function App() {
   return (
     <Provider store={store}>
