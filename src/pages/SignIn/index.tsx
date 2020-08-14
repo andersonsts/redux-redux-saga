@@ -8,10 +8,10 @@ import logo from '../../assets/logo.png';
 import './index.css';
 
 const SignIn: React.FC = () => {
-  const { loadingSignInRequest } = useSelector((state: StoreState) => state.auth); // Obtém uma informação da store.
+  const { loadingSignInRequest, token } = useSelector((state: StoreState) => state.auth); // Obtém uma informação da store.
   const dispatch = useDispatch();
 
-  console.log(loadingSignInRequest);
+  console.log(token);
 
   const handleSignIn = useCallback(() => {
     dispatch(signInRequest({ email: 'test@email.com', password: '123456' }));

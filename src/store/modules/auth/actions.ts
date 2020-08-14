@@ -1,15 +1,18 @@
 import { action } from "typesafe-actions";
 
-interface SignInData {
-  email: string;
-  password: string;
-}
-
-function signInRequest({ email, password }: SignInData) {
+export function signInRequest({ email, password }: { email: string; password: string; }) {
   return action('@auth/SIGN_IN_REQUEST', {
     email,
     password
-  })
+  });
 }
 
-export { signInRequest };
+export function signInSuccess({ token }: { token: string }) {
+  return action('@auth/SIGN_IN_SUCCESS', {
+    token
+  });
+}
+
+export function signInFailure() {
+  return action('@auth/SIGN_IN_FAILURE');
+}
